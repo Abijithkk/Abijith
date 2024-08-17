@@ -1,0 +1,156 @@
+.home-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}.welcome-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0px;
+  padding: 20px;
+  background: linear-gradient(45deg, #4a90e2, #50e3c2, #50e3c2);
+  background-size: 300% 300%;
+  animation: gradientAnimation 10s ease infinite;
+  border-radius: 10px;
+  position: relative;
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
+
+.welcome-section::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(135deg, #003c8f, #0056a0); 
+  border-radius: 15px;
+  z-index: -1;
+}
+
+.welcome-message {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ddd; 
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-message h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.welcome-message .highlight {
+  background: linear-gradient(45deg, #003c8f, #0056a0); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.search-bar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 12px 16px;
+  margin-right: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.search-bar input::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background-color: #003c8f; 
+  transition: width 0.3s ease;
+}
+
+.search-bar input:focus::after {
+  width: 100%;
+}
+
+.search-bar input:focus {
+  border-color: #003c8f; 
+  box-shadow: 0 0 5px rgba(0, 60, 143, 0.5);
+  outline: none;
+}
+
+.search-bar button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #003c8f;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.search-bar button:hover {
+  background-color: #0056a0; 
+  transform: scale(1.05);
+}
+
+
+.movie-card-inner {
+  position: relative;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+
+
+
+
+.fab-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #003c8f; 
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-size: 24px;
+  transition: transform 0.3s;
+}
+
+.fab-button:hover {
+  transform: scale(1.1);
+}
+
+.add-movie-icon, .mark-watched-icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f0f0f0; 
+  margin: 0 5px;
+}

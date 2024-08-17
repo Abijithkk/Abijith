@@ -1,0 +1,174 @@
+.enhanced-auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .enhanced-auth-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+    position: relative;
+    animation: scalePulse 6s ease-in-out infinite;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .enhanced-auth-card.slide-left {
+    animation: slideIn 0.6s forwards;
+  }
+  
+  @keyframes scalePulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .enhanced-auth-header {
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+  
+  .animated-logo {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+  }
+  
+  .animated-logo:hover {
+    transform: scale(1.2);
+  }
+  
+  .enhanced-input-wrapper {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+  
+  input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus {
+    border-color: #7A5FF5;
+    animation: inputPulse 0.5s forwards;
+  }
+  
+  @keyframes inputPulse {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.02);
+    }
+  }
+  
+  label {
+    position: absolute;
+    top: 0.5rem;
+    left: 1rem;
+    font-size: 1rem;
+    color: #999;
+    transition: all 0.3s ease;
+  }
+  
+  input:focus + label,
+  input:not(:placeholder-shown) + label {
+    top: -1.5rem;
+    left: 0.5rem;
+    font-size: 0.85rem;
+    color: #7A5FF5;
+  }
+  
+  .enhanced-auth-button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #7A5FF5;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s ease;
+  }
+  
+  .enhanced-auth-button:hover {
+    background: #6043d1;
+  }
+  
+  .enhanced-auth-button::after {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transition: width 0.3s ease, height 0.3s ease;
+    transform: translate(-50%, -50%) scale(0.3);
+    opacity: 0;
+  }
+  
+  .enhanced-auth-button:hover::after {
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  
+  .loader {
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid #7A5FF5;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin: auto;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .enhanced-auth-footer p {
+    margin-top: 1.5rem;
+    color: #7A5FF5;
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .enhanced-auth-footer p:hover {
+    color: #6043d1;
+    transform: scale(1.1);
+  }
+  

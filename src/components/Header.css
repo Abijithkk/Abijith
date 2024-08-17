@@ -1,0 +1,17 @@
+.custom-navbar {
+    background: #2c3e50; 
+  }
+  
+  .icon-container {
+    display: inline-flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .icon-menu {
+    transform: rotate(0deg);
+  }
+  
+  .icon-close {
+    transform: rotate(180deg); 
+  }
+  
